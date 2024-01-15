@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const request = require('request'); // Установите пакет request, если его нет
+const axios = require('axios'); // Установите пакет axios, если его нет
 
 app.use((req, res, next) => {
     const clientIp = req.ip; // Получаем полный IP-адрес посетителя
@@ -8,23 +8,23 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Kazdream_logo.svg/750px-Kazdream_logo.svg.png';
 
-    // Загрузить изображение по ссылке
-    request.get(imageUrl, (error, response, body) => {
-        if (!error && response.statusCode === 200) {
-            // Установить заголовки для отправки изображения
-            res.setHeader('Content-Type', 'image/jpeg');
-            res.setHeader('Content-Disposition', 'inline; filename=your_image.jpg');
+    try {
+        // Выполнить GET-запрос с помощью axios
+        const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
 
-            // Отправить изображение в ответе
-            res.send(body);
-        } else {
-            console.error(error);
-            res.status(500).send('Ошибка загрузки изображения');
-        }
-    });
+        // Установить заголовки для отправки изображения
+        res.setHeader('Content-Type', 'image/jpeg');
+        res.setHeader('Content-Disposition', 'inline; filename=your_image.jpg');
+
+        // Отправить изображение в ответе
+        res.send(Buffer.from(response.data, 'binary'));
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Ошибка загрузки изображения');
+    }
 });
 
 const port = 3000;
