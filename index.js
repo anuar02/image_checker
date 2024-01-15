@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const fs = require('fs');
+const request = require('request'); // Установите пакет request, если его нет
 
 app.use((req, res, next) => {
     const clientIp = req.ip; // Получаем полный IP-адрес посетителя
@@ -9,19 +9,21 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    // Прочитать изображение из файла
-    fs.readFile('img.png', (err, data) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).send('Ошибка сервера');
+    const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Kazdream_logo.svg/750px-Kazdream_logo.svg.png';
+
+    // Загрузить изображение по ссылке
+    request.get(imageUrl, (error, response, body) => {
+        if (!error && response.statusCode === 200) {
+            // Установить заголовки для отправки изображения
+            res.setHeader('Content-Type', 'image/jpeg');
+            res.setHeader('Content-Disposition', 'inline; filename=your_image.jpg');
+
+            // Отправить изображение в ответе
+            res.send(body);
+        } else {
+            console.error(error);
+            res.status(500).send('Ошибка загрузки изображения');
         }
-
-        // Установить заголовки для отправки изображения
-        res.setHeader('Content-Type', 'image/jpeg');
-        res.setHeader('Content-Disposition', 'inline; filename=your_image.jpg');
-
-        // Отправить изображение в ответе
-        res.send(data);
     });
 });
 
