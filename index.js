@@ -30,9 +30,10 @@ app.get('/', async (req, res) => {
 
     try {
         const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
-        res.setHeader('Content-Type', 'image/jpeg');
-        res.setHeader('Content-Disposition', 'inline; filename=your_image.jpg');
-        res.send(Buffer.from(response.data, 'binary'));
+        const resizedImage = await sharp(response.data).resize(1, 1).toBuffer();
+
+        res.setHeader('Content-Type', 'image/png');
+        res.send(resizedImage);
     } catch (error) {
         console.error(error);
         res.status(500).send('Ошибка загрузки изображения');
