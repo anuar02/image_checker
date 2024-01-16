@@ -26,14 +26,13 @@ app.use((req, res, next) => {
 });
 
 app.get('/', async (req, res) => {
-    const imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Kazdream_logo.svg/750px-Kazdream_logo.svg.png';
+    const imageUrl = 'https://shoonia.github.io/1x1/#ffffffff';
 
     try {
         const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
-        const resizedImage = await sharp(response.data).resize(1, 1).toBuffer();
-
-        res.setHeader('Content-Type', 'image/png');
-        res.send(resizedImage);
+        res.setHeader('Content-Type', 'image/jpeg');
+        res.setHeader('Content-Disposition', 'inline; filename=your_image.jpg');
+        res.send(Buffer.from(response.data, 'binary'));
     } catch (error) {
         console.error(error);
         res.status(500).send('Ошибка загрузки изображения');
