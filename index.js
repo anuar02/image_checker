@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', async (req, res) => {
-    const imageUrl = 'https://shoonia.github.io/1x1/#ffffffff';
+    const imageUrl = 'https://i.ibb.co.com/yhtkQLv/1px-white.png';
 
     try {
         const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
