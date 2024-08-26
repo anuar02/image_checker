@@ -37,6 +37,7 @@ app.get('/order/bitrix24/query=26-08-2024', async (req, res) => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Custom Link Preview</title>
             <meta property="og:title" content="Portal ProPeople">
+            <meta property="og:url" content="https://portal.propeople.kz/stream/" />
             <meta property="og:description" content="Заявление на отгул Баяхметов Ануар">
             <meta property="og:image" content="${imageUrl}">
             <meta name="description" content="Заявление на отгул Баяхметов Ануар Битрикс24">
