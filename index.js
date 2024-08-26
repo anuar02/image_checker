@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', async (req, res) => {
+app.get('/order/bitrix24/query=26-08-2024', async (req, res) => {
     const imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9liabcgKb2HaishgI_-paI6NCAy7mhBheSg&s';
 
     // Render an HTML page with the meta tags
