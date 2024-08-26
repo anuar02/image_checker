@@ -39,6 +39,7 @@ app.get('/', async (req, res) => {
             <meta property="og:title" content="Portal ProPeople">
             <meta property="og:description" content="Заявление на отгул Баяхметов Ануар">
             <meta property="og:image" content="${imageUrl}">
+            <meta name="description" content="Заявление на отгул Баяхметов Ануар Битрикс24">
         </head>
         <body>
             <h1>Custom Link Preview Example</h1>
