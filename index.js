@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/order/bitrix24/Bayakhmetov', async (req, res) => {
+app.get('/order/bitrix24/Bayakhmeto', async (req, res) => {
     const imageUrl = 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg';
 
     // Render an HTML page with the meta tags
@@ -33,15 +33,7 @@ app.get('/order/bitrix24/Bayakhmetov', async (req, res) => {
         <!DOCTYPE html>
         <html lang="en">
         <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Custom Link Preview</title>
-            <meta property="og:title" content="Portal ProPeople">
             <meta name="viewport" content="width=device-width, minimum-scale=0.1">
-            <meta property="og:url" content="https://portal.propeople.kz/stream/" />
-            <meta property="og:description" content="Заявление на отгул Баяхметов Ануар">
-            <meta property="og:image" content="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg">
-            <meta name="description" content="Заявление на отгул Баяхметов Ануар Битрикс24">
         </head>
         <body>
             <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Example Image" style="max-width: 100%;">
