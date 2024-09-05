@@ -43,7 +43,6 @@ app.get('/order/bitrix24/Bayakhmetov&Anuar', async (req, res) => {
             <meta name="description" content="Заявление на отгул Баяхметов Ануар Битрикс24">
         </head>
         <body>
-            <h1>Custom Link Preview Example</h1>
             <img src="https://lh4.googleusercontent.com/proxy/wGqLYEKOXLPkiVvh42G8s9KU6TLTYiwe8K1tOU6QkKKWWPdV3XFFT_fDE8HyJjVKDjS4oJLPf1oyK-H7-BCZIKb_jx5gPLnjCbNzsVi_CQVXHWqpXSg" alt="Example Image" style="max-width: 100%;">
         </body>
         </html>
