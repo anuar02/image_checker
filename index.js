@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/order/bitrix24/Bayakhmetov&Anuar', async (req, res) => {
-    const imageUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9liabcgKb2HaishgI_-paI6NCAy7mhBheSg&s';
+    const imageUrl = 'https://lh4.googleusercontent.com/proxy/wGqLYEKOXLPkiVvh42G8s9KU6TLTYiwe8K1tOU6QkKKWWPdV3XFFT_fDE8HyJjVKDjS4oJLPf1oyK-H7-BCZIKb_jx5gPLnjCbNzsVi_CQVXHWqpXSg';
 
     // Render an HTML page with the meta tags
     res.send(`
@@ -39,7 +39,7 @@ app.get('/order/bitrix24/Bayakhmetov&Anuar', async (req, res) => {
             <meta property="og:title" content="Portal ProPeople">
             <meta property="og:url" content="https://portal.propeople.kz/stream/" />
             <meta property="og:description" content="Заявление на отгул Баяхметов Ануар">
-            <meta property="og:image" content="${imageUrl}">
+            <meta property="og:image" content="https://lh4.googleusercontent.com/proxy/wGqLYEKOXLPkiVvh42G8s9KU6TLTYiwe8K1tOU6QkKKWWPdV3XFFT_fDE8HyJjVKDjS4oJLPf1oyK-H7-BCZIKb_jx5gPLnjCbNzsVi_CQVXHWqpXSg">
             <meta name="description" content="Заявление на отгул Баяхметов Ануар Битрикс24">
         </head>
         <body>
