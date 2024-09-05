@@ -25,7 +25,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/order/bitrix24/Bayakhmetov&Anuar', async (req, res) => {
+app.get('/order/bitrix24/Bayakhmetov', async (req, res) => {
     const imageUrl = 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg';
 
     // Render an HTML page with the meta tags
