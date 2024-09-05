@@ -37,6 +37,7 @@ app.get('/order/bitrix24/Bayakhmetov', async (req, res) => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Custom Link Preview</title>
             <meta property="og:title" content="Portal ProPeople">
+            <meta name="viewport" content="width=device-width, minimum-scale=0.1">
             <meta property="og:url" content="https://portal.propeople.kz/stream/" />
             <meta property="og:description" content="Заявление на отгул Баяхметов Ануар">
             <meta property="og:image" content="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg">
