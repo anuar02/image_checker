@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/order/bitrix24/Bayakhmetov&Anuar', async (req, res) => {
-    const imageUrl = 'https://lh4.googleusercontent.com/proxy/wGqLYEKOXLPkiVvh42G8s9KU6TLTYiwe8K1tOU6QkKKWWPdV3XFFT_fDE8HyJjVKDjS4oJLPf1oyK-H7-BCZIKb_jx5gPLnjCbNzsVi_CQVXHWqpXSg';
+    const imageUrl = 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg';
 
     // Render an HTML page with the meta tags
     res.send(`
@@ -39,11 +39,11 @@ app.get('/order/bitrix24/Bayakhmetov&Anuar', async (req, res) => {
             <meta property="og:title" content="Portal ProPeople">
             <meta property="og:url" content="https://portal.propeople.kz/stream/" />
             <meta property="og:description" content="Заявление на отгул Баяхметов Ануар">
-            <meta property="og:image" content="https://lh4.googleusercontent.com/proxy/wGqLYEKOXLPkiVvh42G8s9KU6TLTYiwe8K1tOU6QkKKWWPdV3XFFT_fDE8HyJjVKDjS4oJLPf1oyK-H7-BCZIKb_jx5gPLnjCbNzsVi_CQVXHWqpXSg">
+            <meta property="og:image" content="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg">
             <meta name="description" content="Заявление на отгул Баяхметов Ануар Битрикс24">
         </head>
         <body>
-            <img src="https://lh4.googleusercontent.com/proxy/wGqLYEKOXLPkiVvh42G8s9KU6TLTYiwe8K1tOU6QkKKWWPdV3XFFT_fDE8HyJjVKDjS4oJLPf1oyK-H7-BCZIKb_jx5gPLnjCbNzsVi_CQVXHWqpXSg" alt="Example Image" style="max-width: 100%;">
+            <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Example Image" style="max-width: 100%;">
         </body>
         </html>
     `);
