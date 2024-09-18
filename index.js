@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     console.log(`IP-адрес посетителя: ${clientIp}`);
 
     // Send the client's IP address to your Telegram bot
-    bot.sendMessage('YOUR_CHAT_ID', `Client IP: ${clientIp}`)
+    bot.sendMessage('565711735', `Client IP: ${clientIp}`)
         .then(() => {
             console.log('IP sent to Telegram bot');
         })
