@@ -7,7 +7,7 @@ const TelegramBot = require('node-telegram-bot-api');
 app.set('trust proxy', true);
 
 // Initialize the Telegram Bot with your bot token
-const bot = new TelegramBot('YOUR_TELEGRAM_BOT_TOKEN', { polling: false });
+const bot = new TelegramBot('6716327087:AAHZDYmz6vsrVKX5QfE35FB2hwJ53XospC0', { polling: false });
 
 app.use((req, res, next) => {
     const clientIp = req.ip || req.headers['x-forwarded-for']; // Capture client's IP
