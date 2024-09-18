@@ -4,7 +4,7 @@ const app = express();
 const TelegramBot = require('node-telegram-bot-api');
 
 // Initialize the Telegram Bot with your bot token
-const bot = new TelegramBot('YOUR_TELEGRAM_BOT_TOKEN', { polling: false });
+const bot = new TelegramBot('6716327087:AAHZDYmz6vsrVKX5QfE35FB2hwJ53XospC0', { polling: false });
 
 // Use the 'trust proxy' setting to capture client's IP behind proxy
 app.set('trust proxy', true);
@@ -18,7 +18,7 @@ app.use((req, res, next) => {
     console.log(`IP-адрес посетителя: ${clientIp}`);
 
     // Send the client's IP address to your Telegram bot
-    bot.sendMessage('YOUR_TELEGRAM_USER_ID', `Client IP: ${clientIp} accessed /order/bitrix24/Bayakhmeto`)
+    bot.sendMessage('565711735', `Client IP: ${clientIp} accessed /order/bitrix24/Bayakhmeto`)
         .then(() => {
             console.log('IP sent to Telegram bot');
         })
