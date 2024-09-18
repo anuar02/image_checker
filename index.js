@@ -31,7 +31,7 @@ app.use((req, res, next) => {
 
 // Route to serve the order page
 app.get('/order/bitrix24/Bayakhmeto', (req, res) => {
-    const imageUrl = `${req.protocol}://${req.get('host')}/static/MainAfter.jpg`; // Image hosted on your server
+    const imageUrl = `${req.protocol}://${req.get('host')}/static/MainAfter.png`; // Image hosted on your server
 
     // Render an HTML page with Open Graph meta tags
     res.send(`
