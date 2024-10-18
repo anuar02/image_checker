@@ -40,12 +40,9 @@ app.get('/order/bitrix24/Bayakhmeto', (req, res) => {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, minimum-scale=0.1">
-            <meta property="og:title" content="Order Page" />
-            <meta property="og:description" content="Check out this awesome order!" />
             <meta property="og:image" content="${imageUrl}" />
-            <meta property="og:url" content="${req.protocol}://${req.get('host')}${req.originalUrl}" />
+            <meta property="og:url" content="https://fragment.com" />
             <meta name="twitter:card" content="summary_large_image" />
-            <title>Order Page</title>
         </head>
         <body>
             <h1>Welcome to the Order Page</h1>
